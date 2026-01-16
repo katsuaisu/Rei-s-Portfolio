@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rei's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <div class="scanlines"></div>
+
+    <button id="mute-btn" onclick="toggleMute()">
+        🔊
+    </button>
+
+    <audio id="bg-music" src="assets/music.mp3" loop></audio>
+    <audio id="sfx-squish" src="assets/squish.mp3"></audio>
+
+    <main class="container">
+        <header class="hero">
+            <h1 class="popup-title" id="animated-title">Rei's Portfolio</h1>
+            <p class="subtitle pop-art-text">✨ CREATIVE DEVELOPER & DESIGNER ✨</p>
+        </header>
+
+        <nav class="star-nav">
+            <button class="squishy-star-btn" onclick="playSquish(); triggerDialogue('pubmats')">
+                <div class="btn-content">
+                    <img src="assets/star.png" class="btn-icon" alt="★">
+                    <span class="label">Pubmats</span>
+                </div>
+            </button>
+
+            <button class="squishy-star-btn" onclick="playSquish(); triggerDialogue('posters')">
+                <div class="btn-content">
+                    <img src="assets/star.png" class="btn-icon" alt="★">
+                    <span class="label"> Project Designs</span>
+                </div>
+            </button>
+
+            <button class="squishy-star-btn" onclick="playSquish(); triggerDialogue('websites')">
+                <div class="btn-content">
+                    <img src="assets/star.png" class="btn-icon" alt="★">
+                    <span class="label">Websites</span>
+                </div>
+            </button>
+
+            <button class="squishy-star-btn" onclick="playSquish(); triggerDialogue('photography')">
+                <div class="btn-content">
+                    <img src="assets/star.png" class="btn-icon" alt="★">
+                    <span class="label">Photography</span>
+                </div>
+            </button>
+        </nav>
+
+        <div class="bottom-menu">
+            <button class="shiny-pixel-btn"
+                onclick="playSquish(); openModal('modal-qualifications')">Qualifications</button>
+            <button class="shiny-pixel-btn red" onclick="playSquish(); openModal('modal-why')">Why Join?</button>
+        </div>
+    </main>
+
+    <div id="dialogue-overlay" class="dialogue-overlay" onclick="handleDialogueClick(event)">
+        <img src="assets/reilien.png" id="reilien-char" class="character-sprite" alt="Reilien">
+        <div class="dialogue-box">
+            <h3 class="char-name">Reilien</h3>
+            <p id="dialogue-text" class="typewriter-text"></p>
+            <div class="blinking-arrow">▼</div>
+        </div>
+    </div>
+
+    <div id="modal-pubmats" class="modal-overlay">
+        <div class="modal-window spacey-style">
+            <div class="modal-bar"><span>★ PUBMATS ★</span><button class="cute-x-btn"
+                    onclick="playSquish(); closeModal()">✕</button></div>
+            <div class="modal-content">
+                <p class="modal-description">
+                    Pubmats I've made that aren't academic-related <br>
+                    
+                </p>
+                <div class="gallery-grid" id="grid-pubmats"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-posters" class="modal-overlay">
+        <div class="modal-window spacey-style">
+            <div class="modal-bar"><span>★ PROJECT DESIGNS ★</span><button class="cute-x-btn"
+                    onclick="playSquish(); closeModal()">✕</button></div>
+            <div class="modal-content">
+                <p class="modal-description">
+                    A collection of academic-related media. <br>
+                    
+                </p>
+                <div class="gallery-grid" id="grid-posters"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-websites" class="modal-overlay">
+        <div class="modal-window spacey-style">
+            <div class="modal-bar"><span>★ WEB ★</span><button class="cute-x-btn"
+                    onclick="playSquish(); closeModal()">✕</button></div>
+            <div class="modal-content">
+                <p class="modal-description">
+                    Projects involving HTML, CSS, and JS.<br>
+                    
+                </p>
+                <div id="list-websites" class="link-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-photography" class="modal-overlay">
+        <div class="modal-window spacey-style">
+            <div class="modal-bar"><span>★ PHOTOS ★</span><button class="cute-x-btn"
+                    onclick="playSquish(); closeModal()">✕</button></div>
+            <div class="modal-content">
+                <p class="modal-description">
+                    A WIP of photos I've taken<br>
+                    
+                </p>
+                <div class="gallery-grid" id="grid-photography"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-qualifications" class="modal-overlay">
+        <div class="modal-window spacey-style">
+            <div class="modal-bar"><span>QUALIFICATIONS</span><button class="cute-x-btn"
+                    onclick="playSquish(); closeModal()">✕</button></div>
+            <div class="modal-content text-lg">
+                <ul>
+                    <li>Creative Qualifications</li>
+                    <li>Leadership Qualifications</li>
+                    <li>Personal</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-why" class="modal-overlay">
+        <div class="modal-window spacey-style">
+            <div class="modal-bar"><span>★ Why me? ★</span><button class="cute-x-btn"
+                    onclick="playSquish(); closeModal()">✕</button></div>
+            <div class="modal-content text-lg">
+                <p>MAMAYA</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+        <div class="lightbox-content-wrapper">
+            <img id="lightbox-img" src="" alt="Zoomed">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

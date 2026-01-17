@@ -51,6 +51,19 @@ body {
     background: radial-gradient(circle at center, #2a0b45 0%, #1a0b2e 100%);
     color: white;
     font-family: var(--font-main);
+    cursor: url('assets/cursor.png'), auto;
+}
+
+a,
+button,
+.squishy-star-btn,
+.shiny-pixel-btn,
+.cute-x-btn,
+.grid-item img,
+.lightbox-close,
+#mute-btn,
+.website-item a {
+    cursor: url('assets/cursor1.png'), pointer !important;
 }
 
 .fade-overlay {

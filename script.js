@@ -1,7 +1,7 @@
 "use strict";
 
 const pubmatsData = ['assets/alitaptap.png', 'assets/ua.png', 'assets/forgood.png', 'assets/dpblast.png', 'assets/sr.png', 'assets/ml.png', 'assets/cringe.png', 'assets/pb.png', 'assets/pb1.png'];
-const postersData = ['assets/1.png', 'assets/6.png', 'assets/3.png', 'assets/7.png', 'assets/eng.png', 'assets/analysis.png', 'assets/event.png', 'assets/info.png', 'assets/old.png', 'assets/pp.png', 'assets/pp1.png'];
+const postersData = ['assets/1.png', 'assets/6.png', 'assets/3.png', 'assets/7.png', 'assets/eng.png', 'assets/analysis.png', 'assets/bio.png', 'assets/event.png', 'assets/info.png', 'assets/old.png', 'assets/pp.png', 'assets/pp1.png'];
 const photographyData = ['assets/p1.JPG', 'assets/p2.JPG', 'assets/p3.JPG', 'assets/p4.jpg', 'assets/p5.JPG'];
 const websitesData = [
     { title: "ChiikArcade", url: "https://katsuaisu.github.io/WDProjStrontiumDulaySaquing/", desc: "One of my most creative works challenging my balance of code and creativity." },

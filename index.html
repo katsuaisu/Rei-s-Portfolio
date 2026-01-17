@@ -5,148 +5,230 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rei's Portfolio</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <canvas id="canvas"></canvas>
+
+    <div class="fade-overlay"></div>
     <div class="scanlines"></div>
 
-    <button id="mute-btn" onclick="toggleMute()">
-        🔊
-    </button>
+    <button id="mute-btn" onclick="toggleMute()">🔊</button>
+    <audio id="bg-music" src="music.mp3" loop></audio>
+    <audio id="sfx-squish" src="squish.mp3"></audio>
 
-    <audio id="bg-music" src="assets/music.mp3" loop></audio>
-    <audio id="sfx-squish" src="assets/squish.mp3"></audio>
-
-    <main class="container">
-        <header class="hero">
-            <h1 class="popup-title" id="animated-title">Rei's Portfolio</h1>
-            <p class="subtitle pop-art-text">✨ CREATIVE DEVELOPER & DESIGNER ✨</p>
-        </header>
-
-        <nav class="star-nav">
-            <button class="squishy-star-btn" onclick="playSquish(); triggerDialogue('pubmats')">
-                <div class="btn-content">
-                    <img src="assets/star.png" class="btn-icon" alt="★">
-                    <span class="label">Pubmats</span>
+    <div id="parallax-wrapper">
+        <main class="container">
+            <div id="ufo-wrapper">
+                <div class="ufo">
+                    <div class="monster">
+                        <div class="body">
+                            <div class="ear"></div>
+                            <div class="ear"></div>
+                            <div class="eye"></div>
+                        </div>
+                    </div>
+                    <div class="body"></div>
+                    <div class="lights"></div>
                 </div>
-            </button>
+            </div>
 
-            <button class="squishy-star-btn" onclick="playSquish(); triggerDialogue('posters')">
-                <div class="btn-content">
-                    <img src="assets/star.png" class="btn-icon" alt="★">
-                    <span class="label"> Project Designs</span>
+            <header class="hero">
+                <h1 class="popup-title" id="animated-title">Rei's Portfolio</h1>
+                <p class="subtitle pop-art-text animated-header-text">Minsan creative, madalas pagod</p>
+            </header>
+
+            <nav class="star-nav">
+                <button class="squishy-star-btn" onclick="playSquish(); triggerDialogue('pubmats')">
+                    <div class="btn-content">
+                        <img src="assets/star.png" class="btn-icon" alt="★">
+                        <span class="label animated-label">Pubmat/Poster</span>
+                    </div>
+                </button>
+
+                <button class="squishy-star-btn" onclick="playSquish(); triggerDialogue('posters')">
+                    <div class="btn-content">
+                        <img src="assets/star.png" class="btn-icon" alt="★">
+                        <span class="label animated-label">Project Designs</span>
+                    </div>
+                </button>
+
+                <button class="squishy-star-btn" onclick="playSquish(); triggerDialogue('websites')">
+                    <div class="btn-content">
+                        <img src="assets/star.png" class="btn-icon" alt="★">
+                        <span class="label animated-label">Websites</span>
+                    </div>
+                </button>
+
+                <button class="squishy-star-btn" onclick="playSquish(); triggerDialogue('photography')">
+                    <div class="btn-content">
+                        <img src="assets/star.png" class="btn-icon" alt="★">
+                        <span class="label animated-label">Photography</span>
+                    </div>
+                </button>
+            </nav>
+
+            <div class="bottom-menu">
+                <button class="shiny-pixel-btn"
+                    onclick="playSquish(); openModal('modal-qualifications')">Qualifications</button>
+                <button class="shiny-pixel-btn red" onclick="playSquish(); openModal('modal-why')">Why Me?</button>
+            </div>
+        </main>
+
+        <section id="about-section">
+            <div class="about-wrapper">
+                <div class="about-text-content" data-speed="0.1">
+                    <h2 class="popup-title big-about-title">
+                        <span class="gummy-letter" style="--d:0.0s" data-char="A">A</span>
+                        <span class="gummy-letter" style="--d:0.1s" data-char="B">B</span>
+                        <span class="gummy-letter" style="--d:0.2s" data-char="O">O</span>
+                        <span class="gummy-letter" style="--d:0.3s" data-char="U">U</span>
+                        <span class="gummy-letter" style="--d:0.4s" data-char="T">T</span>
+                        <span class="gummy-letter" style="--d:0.5s" data-char=" ">&nbsp;</span>
+                        <span class="gummy-letter" style="--d:0.6s" data-char="M">M</span>
+                        <span class="gummy-letter" style="--d:0.7s" data-char="E">E</span>
+                    </h2>
+
+                    <div class="about-body frosted-glass">
+                        <p>Veorp! I'm Rei.</p>
+                        <p>I really like designing and blending my creativity with code. The applications I use to design usually range from Ibis Paint X, Adobe Photoshop & Illustrator,
+                            Canva, and Photopea. I only use one application to code, and that's Visual Studio Code ꉂ(˵˃ ᗜ ˂˵). 
+                            
+                        </p>
+                        <p>I'm very passionate about multimedia design and I love experimenting and going out of my comfort zone ⋆˚꩜｡. 
+                        </p>
+                    </div>
                 </div>
-            </button>
 
-            <button class="squishy-star-btn" onclick="playSquish(); triggerDialogue('websites')">
-                <div class="btn-content">
-                    <img src="assets/star.png" class="btn-icon" alt="★">
-                    <span class="label">Websites</span>
+                <div class="about-image-box" data-speed="-0.1">
+                    <img src="assets/rei.png" alt="Rei" class="rei-avatar">
                 </div>
-            </button>
+            </div>
+        </section>
 
-            <button class="squishy-star-btn" onclick="playSquish(); triggerDialogue('photography')">
-                <div class="btn-content">
-                    <img src="assets/star.png" class="btn-icon" alt="★">
-                    <span class="label">Photography</span>
-                </div>
-            </button>
-        </nav>
-
-        <div class="bottom-menu">
-            <button class="shiny-pixel-btn"
-                onclick="playSquish(); openModal('modal-qualifications')">Qualifications</button>
-            <button class="shiny-pixel-btn red" onclick="playSquish(); openModal('modal-why')">Why Join?</button>
-        </div>
-    </main>
+        <section class="footer-section">
+            <div class="footer-content">
+                <img src="assets/dancedance.gif" alt="Alien Dance"
+                    style="width: 150px; height: auto; margin: 0 auto; filter: drop-shadow(0 0 10px #ff7eb9);">
+                <h2 class="galaxy-3d-text footer-text animated-footer-text">Thank you for reading!</h2>
+            </div>
+        </section>
+    </div>
 
     <div id="dialogue-overlay" class="dialogue-overlay" onclick="handleDialogueClick(event)">
         <img src="assets/reilien.png" id="reilien-char" class="character-sprite" alt="Reilien">
-        <div class="dialogue-box">
-            <h3 class="char-name">Reilien</h3>
+        <div class="dialogue-box solid-box">
+            <h3 class="char-name galaxy-3d-text">Reilien</h3>
             <p id="dialogue-text" class="typewriter-text"></p>
             <div class="blinking-arrow">▼</div>
         </div>
     </div>
 
     <div id="modal-pubmats" class="modal-overlay">
-        <div class="modal-window spacey-style">
+        <div class="modal-window spacey-style frosted-glass">
             <div class="modal-bar"><span>★ PUBMATS ★</span><button class="cute-x-btn"
                     onclick="playSquish(); closeModal()">✕</button></div>
             <div class="modal-content">
-                <p class="modal-description">
-                    Pubmats I've made that aren't academic-related <br>
-                    
-                </p>
+                <p class="modal-description">Pubmats I've made that aren't academic-related<br></p>
                 <div class="gallery-grid" id="grid-pubmats"></div>
             </div>
         </div>
     </div>
 
     <div id="modal-posters" class="modal-overlay">
-        <div class="modal-window spacey-style">
+        <div class="modal-window spacey-style frosted-glass">
             <div class="modal-bar"><span>★ PROJECT DESIGNS ★</span><button class="cute-x-btn"
                     onclick="playSquish(); closeModal()">✕</button></div>
             <div class="modal-content">
-                <p class="modal-description">
-                    A collection of academic-related media. <br>
-                    
-                </p>
+                <p class="modal-description">A collection of academic-related media.<br></p>
                 <div class="gallery-grid" id="grid-posters"></div>
             </div>
         </div>
     </div>
 
     <div id="modal-websites" class="modal-overlay">
-        <div class="modal-window spacey-style">
+        <div class="modal-window spacey-style frosted-glass">
             <div class="modal-bar"><span>★ WEB ★</span><button class="cute-x-btn"
                     onclick="playSquish(); closeModal()">✕</button></div>
             <div class="modal-content">
-                <p class="modal-description">
-                    Projects involving HTML, CSS, and JS.<br>
-                    
-                </p>
+                <p class="modal-description">Projects involving HTML, CSS, and JS.<br></p>
                 <div id="list-websites" class="link-list"></div>
             </div>
         </div>
     </div>
 
     <div id="modal-photography" class="modal-overlay">
-        <div class="modal-window spacey-style">
+        <div class="modal-window spacey-style frosted-glass">
             <div class="modal-bar"><span>★ PHOTOS ★</span><button class="cute-x-btn"
                     onclick="playSquish(); closeModal()">✕</button></div>
             <div class="modal-content">
-                <p class="modal-description">
-                    A WIP of photos I've taken<br>
-                    
-                </p>
+                <p class="modal-description">A WIP of photos I've taken<br></p>
                 <div class="gallery-grid" id="grid-photography"></div>
             </div>
         </div>
     </div>
 
     <div id="modal-qualifications" class="modal-overlay">
-        <div class="modal-window spacey-style">
+        <div class="modal-window spacey-style frosted-glass">
             <div class="modal-bar"><span>QUALIFICATIONS</span><button class="cute-x-btn"
                     onclick="playSquish(); closeModal()">✕</button></div>
-            <div class="modal-content text-lg">
-                <ul>
-                    <li>Creative Qualifications</li>
-                    <li>Leadership Qualifications</li>
-                    <li>Personal</li>
-                </ul>
+            <div class="modal-content ishmeria-text two-col-layout">
+                <div class="qual-category">
+                    <h3 class="qual-title">Creative Qualifications</h3>
+                    <ul class="cute-list">
+                        <li>Solace Creatives Committee (SY 23-CURRENT)</li>
+                        <li>Ang Lagablab Creatives Committee (SY 24-25)</li>
+                        <li>Kandili Creatives Committee (SY 24-CURRENT)</li>
+                        
+                    </ul>
+                </div>
+                <div class="qual-category">
+                    <h3 class="qual-title">Leadership Qualifications / Extracurriculars </h3>
+                    <ul class="cute-list">
+                        <li>HumFest SY 2025-2026 Volunteer</li>
+                        <li>YMSAT SY 2023-2024 Volunteer</li>
+                        <li>TYFTM Production Volunteer</li>
+                        <li>SayAwit 2025 Director</li>
+                        <li>LedEX NSBH x PSHS x Hiroshima Volunteer</li>
+                        <li>Bahaghari SY 2024-CURRENT Research & Development Committee</li>
+                        <li>Sightlines SY 2023-2025 Batch Director</li>
+                    </ul>
+                </div>
+                <div class="qual-category">
+                    <h3 class="qual-title">General Qualifications</h3>
+                    <ul class="cute-list">
+                        <li>Extremely Passionate & Fast Learner</li>
+                        <li>Proficient Communication Skills</li>
+                        <li>Team Player</li>
+                        <li>Proficient Technical Skills</li>
+                        <li>Willing to keep up with current trends</li>
+                        <li>Willing to put extra effort in delegated tasks</li>
+                        <li>Open Minded</li>
+                        <li>Humans > AI</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 
     <div id="modal-why" class="modal-overlay">
-        <div class="modal-window spacey-style">
+        <div class="modal-window spacey-style frosted-glass">
             <div class="modal-bar"><span>★ Why me? ★</span><button class="cute-x-btn"
                     onclick="playSquish(); closeModal()">✕</button></div>
-            <div class="modal-content text-lg">
-                <p>MAMAYA</p>
+            <div class="modal-content ishmeria-text">
+                <div class="why-container">
+                    <div class="liquid-wrapper">
+                        <p class="highlight-text liquid-text" data-text="I bring ideas to life!">I bring ideas to life!
+                        </p>
+                    </div>
+                    <p>I'm extremely passionate about multimedia design and creativity. 
+                        Even as generative AI continues to take over the creative field, I believe art should
+                         remain human and contain emotions. I love to indulge in different styles and I'm not static 
+                         in my work. I'm more than willing to adapt and go out of my comfort zone. 𐔌՞ ܸ.ˬ.ܸ՞𐦯 </p>
+                    <p>Plus, I make really cute websites #trust. (◕‿◕)</p>
+                </div>
             </div>
         </div>
     </div>
@@ -157,6 +239,15 @@
             <img id="lightbox-img" src="" alt="Zoomed">
         </div>
     </div>
+
+    <svg style="position: absolute; width: 0; height: 0;">
+        <defs>
+            <filter id="liquid">
+                <feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="1" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+            </filter>
+        </defs>
+    </svg>
 
     <script src="script.js"></script>
 </body>
